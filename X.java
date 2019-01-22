@@ -2,22 +2,19 @@ import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public abstract class X {
-
-    protected DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-    protected DateFormat dateFormatFileName = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
-    protected Date date = new Date();
-
 
     /**
      * Extra over all is just a class to make the everyday coding stuff easier to write.
      * Simples said just a bunch of help methods;
      */
+
+    public X(){
+
+    }
 
     /**
      * An easier random funktion
@@ -61,9 +58,9 @@ public abstract class X {
     }
 
     /**
-     *
+     * Reads from file
      * @param filePath
-     * @return
+     * @return String
      */
 
     protected static String readFile(String filePath){
@@ -76,7 +73,7 @@ public abstract class X {
             }
             in.close();
         }
-        catch(Exception e){
+        catch(IOException e){
             e.printStackTrace();
         }
         return text;
@@ -103,6 +100,61 @@ public abstract class X {
         }
         catch(IOException e){
             e.printStackTrace();
+        }
+    }
+
+    /**
+     * Print int arrays
+     * @param array
+     */
+
+    public static void printIntArray(int[] array){
+        for(int i = 0; i < array.length; i++){
+            System.out.println(array[i]);
+        }
+    }
+
+    /**
+     * Print char arrays
+     * @param array
+     */
+
+    public static void printCharArray(char[] array){
+        for(int i = 0; i < array.length; i++){
+            System.out.println(array[i]);
+        }
+    }
+
+    /**
+     * Print double arrays
+     * @param array
+     */
+
+    public static void printDoubleArray(double[] array){
+        for(int i = 0; i < array.length; i++){
+            System.out.println(array[i]);
+        }
+    }
+
+    /**
+     * Print String arrays
+     * @param array
+     */
+
+    public static void printStringArray(String[] array){
+        for(int i = 0; i < array.length; i++){
+            System.out.println(array[i]);
+        }
+    }
+
+    /**
+     * Prints arraylist all types
+     * @param arraylist
+     */
+
+    public static void printArrayList(ArrayList arraylist){
+        for(int i = 0; i < arraylist.size(); i++){
+            System.out.println(arraylist.get(i));
         }
     }
 }
